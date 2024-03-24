@@ -2,11 +2,11 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String fullName = formatName("MehDI", "hAfEZi");
+        String fullName = fullName("MehDI", "hAfEZi");
         System.out.println("Full name: " + fullName);
 
     }
-    public static String formatName(String firstName, String lastName) {
+    public static String fullName(String firstName, String lastName) {
         // Correct the format of the first name
         firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase();
 
@@ -16,5 +16,7 @@ public class Main {
         // Return the full name
         return firstName + " " + lastName;
     }
+
+
 
 }
