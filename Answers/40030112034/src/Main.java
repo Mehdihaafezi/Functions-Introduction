@@ -1,5 +1,7 @@
 import java.util.Scanner;
 public class Main {
+    
+
     public static void main(String[] args) {
 
 
@@ -7,6 +9,7 @@ public class Main {
         System.out.println("Full name: " + fullName);
 
         Scanner scanner = new Scanner(System.in);
+
         String phoneNumber;
         boolean validInput = false;
 
@@ -23,8 +26,16 @@ public class Main {
             }
         } while (!validInput);
 
+        System.out.println("Enter a student ID (between 4 to 13 digits):");
+        String studentID = getValidStudentID(scanner);
+        System.out.println("Valid student ID: " + studentID);
+
         scanner.close();
+
+
     }
+
+
 
 
     public static String fullName(String firstName, String lastName) {
@@ -47,5 +58,17 @@ public class Main {
         }
 
 
+    }
+
+    private static String getValidStudentID(Scanner scanner) {
+        String studentID;
+        do {
+            studentID = scanner.nextLine().trim();
+            if (studentID.matches("\\d{4,13}")) {
+                return studentID;
+            } else {
+                System.out.println("Invalid format. Student ID should be between 4 to 13 digits. Try again:");
+            }
+        } while (true);
     }
 }
